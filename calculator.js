@@ -1,4 +1,5 @@
 const calculator = document.querySelector('#tip-calculator')
+const clear = document.querySelector('#clear-button')
 const amount = document.querySelector('#amount')
 const tip = document.querySelector('#tip')
 const numberOfPeople = document.querySelector('#people')
@@ -11,8 +12,6 @@ calculateTip = () => {
 	let tipAmount = totalAmount * tipPercentage
 	let totalToPay = totalAmount + tipAmount
 	let totalToPayPerPerson = totalToPay / totalPeople
-	console.log(totalToPay)
-	console.log(totalToPayPerPerson)
 
 	perPerson.textContent = `Each person owes CA$${totalToPayPerPerson.toFixed(2)}`
 }
@@ -23,3 +22,5 @@ calculator.addEventListener('submit', event => {
 	}
 	calculateTip()
 })
+
+clear.addEventListener('reset', event => {})
